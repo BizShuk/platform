@@ -1,9 +1,12 @@
 [submodule "gosdk"]
 	path = gosdk
-	url = https://github.com/bizshuk/gosdk.git
+    url = https://github.com/bizshuk/gosdk.git
+    branch = master
 [submodule "inf"]
 	path = inf
 	url = https://github.com/BizShuk/inf.git
+    branch = master
 [submodule "superset"]
 	path = superset
 	url = https://github.com/bizshuk/superset.git
+    branch = master
