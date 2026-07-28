@@ -10,3 +10,7 @@
 	path = superset
 	url = https://github.com/bizshuk/superset.git
     branch = master
+[submodule "n8n"]
+	path = n8n
+	url = https://github.com/BizShuk/n8n.git
+	branch = master
