@@ -18,10 +18,6 @@
 	path = rnet
 	url = https://github.com/BizShuk/rnet.git
 	branch = master
-[submodule "mdserver"]
-	path = mdserver
-	url = https://github.com/BizShuk/mdserver.git
-	branch = master
 [submodule "feedback"]
 	path = feedback
 	url = https://github.com/BizShuk/feedback.git
