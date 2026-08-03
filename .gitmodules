@@ -22,3 +22,7 @@
 	path = mdserver
 	url = https://github.com/BizShuk/mdserver.git
 	branch = master
+[submodule "feedback"]
+	path = feedback
+	url = https://github.com/BizShuk/feedback.git
+	branch = master
