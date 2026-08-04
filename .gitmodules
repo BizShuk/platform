@@ -22,3 +22,7 @@
 	path = feedback
 	url = https://github.com/BizShuk/feedback.git
 	branch = master
+[submodule "cloud"]
+	path = cloud
+	url = https://github.com/BizShuk/cloud.git
+	branch = master
