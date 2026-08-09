@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "platform",
+  "displayName": "Platform Workspace",
+  "version": "1.0.0",
+  "description": "Platform workspace plugin that aggregates reusable infrastructure and operations skills maintained in this repository's submodules.",
+  "author": {
+    "name": "Shuk Liu",
+    "email": "shuk.liu@gmail.com",
+    "url": "https://github.com/bizshuk"
+  },
+  "homepage": "https://github.com/bizshuk/platform",
+  "repository": "https://github.com/bizshuk/platform",
+  "keywords": [
+    "platform",
+    "infrastructure",
+    "operations",
+    "claude-code",
+    "skills"
+  ],
+  "skills": [
+    "bizshuk/gosdk",
+    "bizshuk/inf"
+  ]
+}
