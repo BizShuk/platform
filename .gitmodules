@@ -1,14 +1,18 @@
+[submodule "cloud"]
+	path = cloud
+	url = https://github.com/BizShuk/cloud.git
+	branch = master
+[submodule "feedback"]
+	path = feedback
+	url = https://github.com/BizShuk/feedback.git
+	branch = master
 [submodule "gosdk"]
 	path = gosdk
-    url = https://github.com/bizshuk/gosdk.git
+	url = https://github.com/BizShuk/gosdk.git
 	branch = master
 [submodule "inf"]
 	path = inf
 	url = https://github.com/BizShuk/inf.git
-	branch = master
-[submodule "superset"]
-	path = superset
-	url = https://github.com/bizshuk/superset.git
 	branch = master
 [submodule "n8n"]
 	path = n8n
@@ -18,11 +22,7 @@
 	path = rnet
 	url = https://github.com/BizShuk/rnet.git
 	branch = master
-[submodule "feedback"]
-	path = feedback
-	url = https://github.com/BizShuk/feedback.git
-	branch = master
-[submodule "cloud"]
-	path = cloud
-	url = https://github.com/BizShuk/cloud.git
+[submodule "superset"]
+	path = superset
+	url = https://github.com/BizShuk/superset.git
 	branch = master

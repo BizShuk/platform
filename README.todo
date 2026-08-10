@@ -1,0 +1,23 @@
+# README.todo
+
+工作區層級的待辦。子專案的待辦在各自的 `README.todo`,這裡`不複述`。
+
+## Now
+
+- [ ] `architecture/` 與 `vscode-shuk/` 決定歸屬:登記成 submodule,或移出工作區。
+      兩者都自帶完整統一介面,目前卡在未追蹤狀態,`git status` 永遠是髒的
+- [ ] `sync_r2/` 只有一支 `main.go`,沒有任何統一介面檔案。決定併入哪個 submodule,
+      或獨立成 repo
+
+## Next
+
+- [ ] `.claude-plugin/plugin.json` 的 `skills` 只列了 `bizshuk/gosdk` 與 `bizshuk/inf`,
+      但 `feedback` / `rnet` / `superset` 也有 `skills/` 目錄。確認是刻意收斂還是漏登
+- [ ] 決定 `docs/specs/` `docs/backlog/` `docs/tutorials/` 是否真的需要——
+      三個目錄目前都是空的,空目錄在 git 裡不存在,等於是假的結構承諾
+- [ ] 補上 pin 落後的偵測:目前只能靠人記得跑 `git submodule status`
+
+## Later
+
+- [ ] 跨 submodule 的一致性稽核腳本(統一介面檔案是否齊備、AGENTS.md 是否為 symlink、
+      `ecosystem.config.js` 宣告的任務是否真的在 `pm2 list` 裡)
