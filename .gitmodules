@@ -26,3 +26,6 @@
 	path = superset
 	url = https://github.com/BizShuk/superset.git
 	branch = master
+[submodule "architecture"]
+	path = architecture
+	url = https://github.com/BizShuk/architecture.git
