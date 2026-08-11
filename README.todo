@@ -11,8 +11,8 @@
 
 ## Next
 
-- [ ] `.claude-plugin/plugin.json` 的 `skills` 只列了 `bizshuk/gosdk` 與 `bizshuk/inf`,
-      但 `feedback` / `rnet` / `superset` 也有 `skills/` 目錄。確認是刻意收斂還是漏登
+- [ ] `~/.claude/plugins/known_marketplaces.json` 仍登記 `shuk-cc-plugin` 指向已不存在的
+      `/Users/shuk/projects/cc-plugin`。移除該登記,改用 `BizShuk/platform` marketplace
 - [ ] 決定 `docs/specs/` `docs/backlog/` `docs/tutorials/` 是否真的需要——
       三個目錄目前都是空的,空目錄在 git 裡不存在,等於是假的結構承諾
 - [ ] 補上 pin 落後的偵測:目前只能靠人記得跑 `git submodule status`

@@ -8,7 +8,7 @@
 ./
 ├── .gitmodules            # 唯一的成員清單：7 個 submodule 的 path / url / branch
 ├── .claude-plugin/
-│   └── plugin.json        # Claude Code plugin manifest，聚合各 submodule 的 skills
+│   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / inf / n8n 三個 plugin
 ├── .gitignore             # 通用 ignore template
 ├── .claudeignore          # 與 .gitignore 同內容，供 agent 使用
 ├── .geminiignore          # 同上
@@ -27,7 +27,8 @@
 | 每個成員 pin 在哪個 commit | 本 repo 的 git index | 由 `git add <submodule>` 更新 |
 | 子專案的業務、結構、建置、部署 | 該 submodule 的 `README.md` / `CLAUDE.md` | 本 repo `不複述` |
 | 子專案的背景任務 | 該 submodule 的 `ecosystem.config.js` | 沒有根目錄總表 |
-| 對外發佈的 plugin 身分與 skill 清單 | `.claude-plugin/plugin.json` | |
+| 對外發佈哪些 plugin | `.claude-plugin/marketplace.json` | 只登記 `name` 與 `source`，`不`複述 skill 清單 |
+| 每個 plugin 的身分與 skill 清單 | 該 submodule 的 `.claude-plugin/plugin.json` | skill 由 `skills/` 目錄慣例自動探索 |
 | 工作區層級的待辦 | `README.todo` | 子專案的待辦在各自的 `README.todo` |
 
 ## 關鍵決策 (Key Decisions)
@@ -39,6 +40,10 @@
 - `沒有根目錄的編排`：本 repo `沒有` `package.json`、`沒有` `scripts/run.sh`、
   `沒有` `ecosystem.config.js`。成員之間沒有真實的建置順序，硬造一層 orchestration
   只會製造一份會過期的假事實。要跑什麼就進那個目錄跑。
+- `Marketplace 而非單一聚合 plugin`：本 repo 是 `marketplace`（plugin 的目錄），不是 plugin。
+  plugin 身分屬於`擁有那些 skill 的 repo`——`gosdk`、`inf`、`n8n` 各自帶 `.claude-plugin/plugin.json`，
+  單獨 clone 也能安裝。本層的 `marketplace.json` 只記 `name` + `source`，
+  skill 清單`不在這裡複述`，避免產生第二份會過期的事實。
 - `統一介面由各成員各自滿足`：`README.md` / `CLAUDE.md` / `AGENTS.md` / `README.todo` /
   `docs/terminology.md` / `docs/memory/` 是`每個 repo`的責任，本 repo 也不例外。
 - `Remote URL 大小寫統一為 BizShuk`：GitHub 的 owner 名稱不分大小寫，但混用會讓

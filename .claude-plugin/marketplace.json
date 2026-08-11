@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "platform",
+  "owner": {
+    "name": "Shuk Liu",
+    "email": "shuk.liu@gmail.com",
+    "url": "https://github.com/bizshuk"
+  },
+  "metadata": {
+    "description": "BizShuk platform workspace marketplace — Go development and local infrastructure plugins, each maintained in its own repository.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "gosdk",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/gosdk"
+      },
+      "description": "Go development toolkit for github.com/bizshuk/gosdk — 11 Go skills plus the assertive golang-refactor agent.",
+      "category": "development",
+      "keywords": [
+        "golang",
+        "gosdk",
+        "refactor",
+        "code-review",
+        "tui",
+        "profiling"
+      ]
+    },
+    {
+      "name": "inf",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/inf"
+      },
+      "description": "Local infrastructure toolkit — container packaging and size reduction, npm task runners, and mDNS service discovery.",
+      "category": "infrastructure",
+      "keywords": [
+        "docker",
+        "dockerize",
+        "npm-package",
+        "mdns",
+        "observability"
+      ]
+    },
+    {
+      "name": "n8n",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/n8n"
+      },
+      "description": "n8n workflow platform operations — Docker startup, queue workers, and the pkg/ workflow package deploy lifecycle.",
+      "category": "automation",
+      "keywords": [
+        "n8n",
+        "workflow",
+        "automation",
+        "docker",
+        "deploy"
+      ]
+    }
+  ]
+}

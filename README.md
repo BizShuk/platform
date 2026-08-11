@@ -4,7 +4,7 @@
 以 git submodule 聚在同一棵目錄樹下，讓跨專案的搜尋、稽核與 agent 上下文一次到位。
 
 這裡`唯一擁有`的事實只有三樣：哪些 repo 屬於這個工作區、它們各自的 pin 在哪個 commit、
-以及聚合而成的 Claude Code plugin。任何一個子專案的業務邏輯、建置方式與部署流程，
+以及對外發佈哪些 Claude Code plugin。任何一個子專案的業務邏輯、建置方式與部署流程，
 都由該 repo 自己的 `README.md` / `CLAUDE.md` 擁有，本檔`不複述`。
 
 ## 業務領域 (Business Domains)
@@ -54,5 +54,26 @@ git submodule foreach 'git status --short'
 ```
 
 各子專案的建置與執行方式一律看該目錄下的 `README.md`。
+
+## Claude Code Marketplace
+
+本 repo 同時是一個 `Claude Code marketplace`（plugin 的目錄），登記三個 plugin：
+
+| Plugin | Source | 內容 |
+| --- | --- | --- |
+| `gosdk` | `github:BizShuk/gosdk` | 11 個 Go skills（code-quality / dev / mvc / naming / network / performance-tuning / profiling / tui 等）與 `golang-refactor` agent |
+| `inf` | `github:BizShuk/inf` | 4 個基礎設施 skills：`docker`、`dockerize`、`npm-package`、`dns-sd` |
+| `n8n` | `github:BizShuk/n8n` | `n8n-management` skill：Docker 啟動、queue worker、`pkg/` workflow 部署生命週期 |
+
+```bash
+/plugin marketplace add BizShuk/platform
+/plugin install gosdk@platform
+/plugin install inf@platform
+/plugin install n8n@platform
+```
+
+每個 plugin 的身分寫在`它自己的 repo` 的 `.claude-plugin/plugin.json`，
+skill 由該 repo 的 `skills/` 目錄自動探索——本層的 `marketplace.json`
+只記 `name` 與 `source`，`不`複述清單。
 
 結構、邊界與 ownership 見 [CLAUDE.md](CLAUDE.md)；待辦見 [README.todo](README.todo)。
