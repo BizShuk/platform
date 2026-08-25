@@ -25,3 +25,7 @@
 [submodule "architecture"]
 	path = architecture
 	url = https://github.com/BizShuk/architecture.git
+[submodule "identity"]
+	path = identity
+	url = https://github.com/BizShuk/identity.git
+	branch = master
