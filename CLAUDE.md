@@ -6,7 +6,7 @@
 
 ```tree
 ./
-├── .gitmodules            # 唯一的成員清單：7 個 submodule 的 path / url / branch
+├── .gitmodules            # 唯一的成員清單：8 個 submodule 的 path / url / branch
 ├── .claude-plugin/
 │   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / identity / inf / n8n 四個 plugin
 ├── .gitignore             # 通用 ignore template
@@ -16,7 +16,7 @@
 │   ├── specs/             # 工作區層級的設計與規格，YYYY-MM-DD-<topic>.md
 │   ├── backlog/           # 工作區層級的待辦想法
 │   └── tutorials/         # 工作區層級的領域知識
-└── <submodule>/           # 7 個獨立 repo，各自擁有完整的統一介面
+└── <submodule>/           # 8 個獨立 repo，各自擁有完整的統一介面
 ```
 
 ## Ownership
@@ -53,11 +53,10 @@
 
 ## 邊界 (Boundaries)
 
-- 本 repo `不擁有任何可執行程式`。根層的 `sync_r2/` 是尚未歸位的散件，
-  不是本 repo 的產出——它要嘛併入某個 submodule，要嘛獨立成 repo。
-- `architecture/` 與 `vscode-shuk/` 目前是`未追蹤目錄`，不是 submodule。
-  它們自帶完整的統一介面，狀態上等同「已經是 repo，只是還沒登記」。
-  在登記進 `.gitmodules` 之前，本 repo 對它們`沒有任何擁有權`。
+- 本 repo `不擁有任何可執行程式`。
+- `vscode-shuk/` 目前是`未追蹤目錄`，不是 submodule。它自帶完整的統一介面，
+  狀態上等同「已經是 repo，只是還沒登記」。在登記進 `.gitmodules` 之前，
+  本 repo 對它`沒有任何擁有權`。（`architecture/` 已於登記後成為 submodule。）
 - 跨專案的稽核（一致性、命名、相依）可以在本層做，但`修正一律落在各 submodule`，
   本 repo 只更新 pin。
 

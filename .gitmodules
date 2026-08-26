@@ -1,3 +1,7 @@
+[submodule "architecture"]
+	path = architecture
+	url = https://github.com/BizShuk/architecture.git
+	branch = master
 [submodule "feedback"]
 	path = feedback
 	url = https://github.com/BizShuk/feedback.git
@@ -5,6 +9,10 @@
 [submodule "gosdk"]
 	path = gosdk
 	url = https://github.com/BizShuk/gosdk.git
+	branch = master
+[submodule "identity"]
+	path = identity
+	url = https://github.com/BizShuk/identity.git
 	branch = master
 [submodule "inf"]
 	path = inf
@@ -21,11 +29,4 @@
 [submodule "superset"]
 	path = superset
 	url = https://github.com/BizShuk/superset.git
-	branch = master
-[submodule "architecture"]
-	path = architecture
-	url = https://github.com/BizShuk/architecture.git
-[submodule "identity"]
-	path = identity
-	url = https://github.com/BizShuk/identity.git
 	branch = master
