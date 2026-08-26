@@ -8,7 +8,7 @@
 ./
 ├── .gitmodules            # 唯一的成員清單：7 個 submodule 的 path / url / branch
 ├── .claude-plugin/
-│   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / inf / n8n 三個 plugin
+│   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / identity / inf / n8n 四個 plugin
 ├── .gitignore             # 通用 ignore template
 ├── .claudeignore          # 與 .gitignore 同內容，供 agent 使用
 ├── .geminiignore          # 同上

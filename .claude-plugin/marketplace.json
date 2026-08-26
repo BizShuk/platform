@@ -29,6 +29,23 @@
       ]
     },
     {
+      "name": "identity",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/identity"
+      },
+      "description": "Identity provider consumer toolkit — how the assurance ladder, cookies and revocation feed work, and how to verify tokens with sdk/client-go.",
+      "category": "development",
+      "keywords": [
+        "identity",
+        "auth",
+        "sso",
+        "jwt",
+        "jwks",
+        "token"
+      ]
+    },
+    {
       "name": "inf",
       "source": {
         "source": "github",
