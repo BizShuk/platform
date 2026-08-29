@@ -22,6 +22,10 @@
 	path = n8n
 	url = https://github.com/BizShuk/n8n.git
 	branch = master
+[submodule "payment"]
+	path = payment
+	url = https://github.com/BizShuk/payment.git
+	branch = master
 [submodule "rnet"]
 	path = rnet
 	url = https://github.com/BizShuk/rnet.git

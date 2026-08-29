@@ -6,6 +6,8 @@
 
 - [ ] `architecture/` 與 `vscode-shuk/` 決定歸屬:登記成 submodule,或移出工作區。
       兩者都自帶完整統一介面,目前卡在未追蹤狀態,`git status` 永遠是髒的
+- [ ] `ads/` 決定歸屬:登記成 submodule,或併入某個站台。它已自帶完整統一介面,
+      狀態同 `vscode-shuk/` —— 已經是 repo 的形狀,只是還沒登記
 - [ ] `sync_r2/` 只有一支 `main.go`,沒有任何統一介面檔案。決定併入哪個 submodule,
       或獨立成 repo
 
