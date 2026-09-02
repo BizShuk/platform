@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ads — 版位 demo</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0 auto; max-width:720px; padding:2rem 1.25rem 6rem;
+         font:16px/1.75 -apple-system,"Noto Sans TC",sans-serif; }
+  h1 { font-size:1.5rem; margin:0 0 .25rem; }
+  p.sub { color:#71717a; margin:0 0 2rem; }
+  pre { background:#f4f4f5; color:#18181b; padding:.75rem 1rem; border-radius:6px;
+        overflow-x:auto; font-size:13px; }
+  section { margin:2.5rem 0; }
+  button { font:inherit; padding:.5rem 1rem; border-radius:6px; border:1px solid #c4c4c8;
+           background:#fff; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<h1>ads — 版位 demo</h1>
+<p class="sub">這一頁證明三件事:版位有先佔位, 非正式網域不發請求, consent 未給時不載入.</p>
+
+<section>
+  <h2>狀態</h2>
+  <pre id="state">載入中…</pre>
+  <button id="consent">模擬使用者同意 (grantConsent)</button>
+</section>
+
+<section>
+  <h2>內文上方版位</h2>
+  <div data-ad-slot="1234567890" data-ad-height="280"></div>
+</section>
+
+<section>
+  <p>這裡是一段內文, 用來證明廣告到達時不會把它往下推 —— 高度在任何網路請求
+  之前就已經佔好了. 捲動到下一個版位時才會觸發 lazy load.</p>
+  <p>把視窗拉到最下面, 觀察第二個版位在接近視窗時才進入載入流程.</p>
+</section>
+
+<section style="height:120vh">
+  <p style="color:#a1a1aa">(留白, 製造捲動距離)</p>
+</section>
+
+<section>
+  <h2>文末版位</h2>
+  <div data-ad-slot="0987654321" data-ad-height="250"></div>
+</section>
+
+<!-- data-hosts 故意`不`包含 127.0.0.1 / localhost:
+     demo 頁本來就該停在佔位模式, 這是刻意的預設安全行為. -->
+<script src="../ads.js"
+        data-client="ca-pub-0000000000000000"
+        data-consent="required"
+        data-hosts="outfit.shuks.dev,vidnote.shuks.dev,fun.shuks.dev" defer></script>
+<script>
+  function render() {
+    document.getElementById('state').textContent =
+      JSON.stringify(window.ads ? window.ads.state() : {}, null, 2);
+  }
+  window.addEventListener('load', function () {
+    render();
+    document.getElementById('consent').addEventListener('click', function () {
+      window.ads.grantConsent(); render();
+    });
+  });
+</script>
+</body>
+</html>

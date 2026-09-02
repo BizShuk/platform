@@ -1,0 +1,31 @@
+# README.todo
+
+`ads` 的待辦。完整理由見 [docs/specs/2026-08-29-adsense-integration.md](docs/specs/2026-08-29-adsense-integration.md),
+稽核用 `./scripts/check.sh`。這裡`不複述`理由,只列動作。
+
+## Now(外部等待最久,先啟動)
+
+- [ ] 用 `fun.shuks.dev` 送 AdSense 審核 —— 984 篇原創景點筆記, 匿名可讀,
+      評估見 docs/specs/2026-08-29-content-site-candidates.md
+- [ ] 在 `tools/mdserver` 的 `web/page.html` 加上廣告 script 掛載點 ——
+      單一 template 覆蓋全部 984 頁
+- [ ] 寫隱私權政策頁並部署到 `/privacy`,內容須揭露第三方 cookie 與廣告投放。
+      實測 outfit / vidnote / fun / feedback 四個網域的 `/privacy` 全部 404
+- [ ] 在 `inf` 的 `hosts/liva/nginx/config/proxy.conf` 新增 `/ads.txt` 的 location,
+      供應本 repo 的 `public/ads.txt`。四個網域目前全部回 404
+
+## Next(取得帳號前後)
+
+- [ ] 送出 AdSense 帳號申請,取得 `ca-pub-` Publisher ID
+- [ ] 把 Publisher ID 填進 `public/ads.txt`(用 `pub-` 前綴)與各頁的
+      `data-client`(用 `ca-pub-` 前綴)—— 兩處格式`不同`
+- [ ] 在 AdSense 後台建立版位,把 10 位數的 Ad Slot ID 填進頁面的 `data-ad-slot`
+
+## Later(上線後)
+
+- [ ] 接 Google Funding Choices CMP,由它呼叫 `window.ads.grantConsent()`。
+      沒有它,EEA / UK 流量只能拿到非個人化與限定廣告
+- [ ] 申請 AdSense Management API 的 OAuth 憑證,把 RPM 與收益打進 `inf` 的 Grafana
+- [ ] 若之後啟用 CSP,放行 `pagead2.googlesyndication.com`、
+      `googleads.g.doubleclick.net`、`tpc.googlesyndication.com`、
+      `fundingchoicesmessages.google.com` —— 漏掉會靜默失效

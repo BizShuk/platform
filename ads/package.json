@@ -1,0 +1,12 @@
+{
+  "name": "ads",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AdSense 版位載入器與上線前缺口稽核",
+  "scripts": {
+    "dev": "npx --yes http-server web -p 8600 -c-1 -o /demo/",
+    "check": "./scripts/check.sh",
+    "test": "node --check web/ads.js && node web/ads.test.js && bash -n scripts/check.sh",
+    "run:setup": "mkdir -p \"$HOME/.config/ads\" && touch \"$HOME/.config/ads/state.env\" && echo \"state: $HOME/.config/ads/state.env\""
+  }
+}

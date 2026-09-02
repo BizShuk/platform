@@ -1,0 +1,17 @@
+# ads.txt — Authorized Digital Sellers (IAB Tech Lab spec)
+#
+# 這個檔必須放在`每一個`要顯示廣告的網域`根目錄`, 且公開可讀:
+#   https://<domain>/ads.txt
+#
+# 它宣告「誰有權賣這個網域的廣告版位」. 買方 (DSP) 在出價前會抓這個檔,
+# 對不上就`不出價` —— 沒有這個檔不會壞掉, 只會讓收益接近零, 且沒有任何錯誤訊息.
+#
+# 格式: <廣告系統網域>, <發布商 ID>, <關係>, <認證機構 ID>
+#   DIRECT   = 你直接與該廣告系統簽約
+#   RESELLER = 透過第三方轉售
+#   f08c47fec0942fa0 = Google 在 TAG 的認證機構 ID, 固定值, 照抄
+#
+# 換掉下面的 pub-0000000000000000 為自己的 Publisher ID (去掉 ca- 前綴).
+# 注意: AdSense 後台顯示的是 `ca-pub-XXXX`, 但 ads.txt 裡寫的是 `pub-XXXX`.
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
