@@ -6,7 +6,7 @@
 
 ```tree
 ./
-├── .gitmodules            # 唯一的成員清單：9 個 submodule 的 path / url / branch
+├── .gitmodules            # 唯一的成員清單：8 個 submodule 的 path / url / branch
 ├── .claude-plugin/
 │   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / identity / inf / n8n 四個 plugin
 ├── .gitignore             # 通用 ignore template
@@ -16,7 +16,7 @@
 │   ├── specs/             # 工作區層級的設計與規格，YYYY-MM-DD-<topic>.md
 │   ├── backlog/           # 工作區層級的待辦想法
 │   └── tutorials/         # 工作區層級的領域知識
-└── <submodule>/           # 9 個獨立 repo，各自擁有完整的統一介面
+└── <submodule>/           # 8 個獨立 repo，各自擁有完整的統一介面
 ```
 
 ## Ownership
@@ -48,6 +48,9 @@
   `docs/terminology.md` / `docs/memory/` 是`每個 repo`的責任，本 repo 也不例外。
 - `Remote URL 大小寫統一為 BizShuk`：GitHub 的 owner 名稱不分大小寫，但混用會讓
   `.gitmodules` 與 `.git/config` 的字面值比對失敗，也讓 grep 稽核漏抓。
+- `architecture 已退場 (2026-09-07)`：內容整份併入 `inf/docs/architecture/`。
+  部署事實（`inf/hosts/`）與部署格式（`deployment.yml`）本來就同屬 inf，
+  另立一個 repo 只會讓同一組事實有兩個擁有者。成員數因此從 9 降為 8。
 - `.gitmodules 依 submodule 名稱字母排序`：新增成員時有唯一正確的插入位置，避免
   每次新增都產生一筆「加在最後面」的無意義 diff 順序。
 
@@ -56,7 +59,7 @@
 - 本 repo `不擁有任何可執行程式`。
 - `vscode-shuk/` 目前是`未追蹤目錄`，不是 submodule。它自帶完整的統一介面，
   狀態上等同「已經是 repo，只是還沒登記」。在登記進 `.gitmodules` 之前，
-  本 repo 對它`沒有任何擁有權`。（`architecture/` 已於登記後成為 submodule。）
+  本 repo 對它`沒有任何擁有權`。
 - 跨專案的稽核（一致性、命名、相依）可以在本層做，但`修正一律落在各 submodule`，
   本 repo 只更新 pin。
 
