@@ -76,6 +76,23 @@
         "docker",
         "deploy"
       ]
+    },
+    {
+      "name": "superset",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/superset"
+      },
+      "description": "Superset extension and workspace toolkit — bundles the `todo-review` skill for reviewing, prioritizing, domain re-grouping, and archiving `.todo` files and completed plans.",
+      "category": "development",
+      "keywords": [
+        "superset",
+        "todo",
+        "todo-review",
+        "triage",
+        "prioritize",
+        "vscode"
+      ]
     }
   ]
 }
