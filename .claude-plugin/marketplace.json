@@ -12,6 +12,23 @@
   },
   "plugins": [
     {
+      "name": "feedback",
+      "source": {
+        "source": "github",
+        "repo": "BizShuk/feedback"
+      },
+      "description": "Feedback intake integration toolkit — generating the HTTPS submit call for any device, and embedding the ready-made form page in a WebView or iframe.",
+      "category": "development",
+      "keywords": [
+        "feedback",
+        "intake",
+        "webview",
+        "embed",
+        "widget",
+        "http-api"
+      ]
+    },
+    {
       "name": "gosdk",
       "source": {
         "source": "github",
