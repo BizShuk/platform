@@ -21,6 +21,7 @@
 | [`n8n`](n8n/) | AI 工作流平台 | 可自架的 n8n，執行平台與工作流原始碼放在同一個 repo |
 | [`superset`](superset/) | VS Code 擴充功能 | 側欄整合 Terminals / MDNS / Topology / TODO 觀察型面板 |
 | [`payment`](payment/) | 金流與訂閱銷售 | 收 Stripe / PayPal 的錢,付款成功後由 `identity` 記錄方案權限 |
+| [`webhook-server`](webhook-server/) | Webhook 入口 | 驗證 GitHub / GitLab / Stripe 的簽章後立刻寫進 NATS JetStream，由各 consumer 處理 |
 
 ### 領域關聯 (Domain Relationships)
 

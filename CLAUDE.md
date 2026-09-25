@@ -6,7 +6,7 @@
 
 ```tree
 ./
-├── .gitmodules            # 唯一的成員清單：8 個 submodule 的 path / url / branch
+├── .gitmodules            # 唯一的成員清單：9 個 submodule 的 path / url / branch
 ├── .claude-plugin/
 │   └── marketplace.json   # Claude Code marketplace registry，登記 gosdk / identity / inf / n8n 四個 plugin
 ├── .gitignore             # 通用 ignore template
@@ -16,7 +16,7 @@
 │   ├── specs/             # 工作區層級的設計與規格，YYYY-MM-DD-<topic>.md
 │   ├── backlog/           # 工作區層級的待辦想法
 │   └── tutorials/         # 工作區層級的領域知識
-└── <submodule>/           # 8 個獨立 repo，各自擁有完整的統一介面
+└── <submodule>/           # 9 個獨立 repo，各自擁有完整的統一介面
 ```
 
 ## Ownership

@@ -30,3 +30,7 @@
 	path = superset
 	url = https://github.com/BizShuk/superset.git
 	branch = master
+[submodule "webhook-server"]
+	path = webhook-server
+	url = https://github.com/BizShuk/webhook-server.git
+	branch = master
