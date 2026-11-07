@@ -1,4 +1,4 @@
-# CLAUDE.md — platform 技術脈絡
+# AGENTS.md — platform 技術脈絡
 
 業務定義見 [README.md](README.md)。本檔只放`邊界`與`擁有權`。
 
@@ -25,7 +25,7 @@
 | --- | --- | --- |
 | 工作區有哪些成員 | `.gitmodules` | 唯一事實來源，`README.md` 的表格是導覽不是清單 |
 | 每個成員 pin 在哪個 commit | 本 repo 的 git index | 由 `git add <submodule>` 更新 |
-| 子專案的業務、結構、建置、部署 | 該 submodule 的 `README.md` / `CLAUDE.md` | 本 repo `不複述` |
+| 子專案的業務、結構、建置、部署 | 該 submodule 的 `README.md` / `AGENTS.md` | 本 repo `不複述` |
 | 子專案的背景任務 | 該 submodule 的 `ecosystem.config.js` | 沒有根目錄總表 |
 | 對外發佈哪些 plugin | `.claude-plugin/marketplace.json` | 只登記 `name` 與 `source`，`不`複述 skill 清單 |
 | 每個 plugin 的身分與 skill 清單 | 該 submodule 的 `.claude-plugin/plugin.json` | skill 由 `skills/` 目錄慣例自動探索 |
@@ -44,7 +44,7 @@
   plugin 身分屬於`擁有那些 skill 的 repo`——`gosdk`、`inf`、`n8n` 各自帶 `.claude-plugin/plugin.json`，
   單獨 clone 也能安裝。本層的 `marketplace.json` 只記 `name` + `source`，
   skill 清單`不在這裡複述`，避免產生第二份會過期的事實。
-- `統一介面由各成員各自滿足`：`README.md` / `CLAUDE.md` / `AGENTS.md` / `README.todo` /
+- `統一介面由各成員各自滿足`：`README.md` / `AGENTS.md` / `README.todo` /
   `docs/terminology.md` / `docs/memory/` 是`每個 repo`的責任，本 repo 也不例外。
 - `Remote URL 大小寫統一為 BizShuk`：GitHub 的 owner 名稱不分大小寫，但混用會讓
   `.gitmodules` 與 `.git/config` 的字面值比對失敗，也讓 grep 稽核漏抓。
@@ -68,4 +68,4 @@
 - 提交順序：先在 submodule 內 commit + push，`再`回本 repo `git add <submodule>` 記錄 pin。
 - 檢查落後：`git submodule status`，開頭 `+` 代表 checkout 已超前記錄的 pin。
 - 日期檔名：`docs/specs/` 與 `plans/` 一律 `YYYY-MM-DD-<topic>.md`，topic 要能表意。
-- `AGENTS.md` 一律是指向 `CLAUDE.md` 的 symlink，不是複本。
+- `AGENTS.md` 一律是實體檔；不得有 `CLAUDE.md`。

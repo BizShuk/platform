@@ -22,7 +22,7 @@ ads/
 ├── package.json                # dev / check / test / run:setup
 ├── README.md
 ├── README.todo
-└── AGENTS.md -> CLAUDE.md
+└── AGENTS.md
 ```
 
 `沒有後端`。AdSense 的投放、計費、結算全在 Google 那邊,本 repo 唯一的執行期產物
